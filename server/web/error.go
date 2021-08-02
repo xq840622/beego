@@ -94,6 +94,7 @@ func showErr(err interface{}, ctx *context.Context, stack string) {
 		"BeegoVersion":  beego.VERSION,
 		"GoVersion":     runtime.Version(),
 	}
+	ctx.ResponseWriter.WriteHeader(500)
 	t.Execute(ctx.ResponseWriter, data)
 }
 
